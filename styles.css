@@ -1,15 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    background: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+
+    /* font-family: Arial, sans-serif; */
+    font-family: "Sofia Sans Condensed", sans-serif;
     text-align: center;
     margin: 50px;
+
+    font-size: 30px;
 }
 .container {
-    max-width: 400px;
+    background: rgba(255, 255, 255, 0.5);
+
+    width: 50vw;
+
     margin: auto;
     padding: 20px;
+
     border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); */
 }
 
 input, select, button {
