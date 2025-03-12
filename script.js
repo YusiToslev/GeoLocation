@@ -33,11 +33,13 @@ function convertToQueryString(base, coords, language) {
     return base + params.toString();
 }
 
-function submitData() {
+async function submitData() {
     let content = document.getElementById('coordinates').value;
 
     let coords = coordinatesToLongLat(content);
     let queryString = convertToQueryString(BASE_URL, coords);
 
-    alert(queryString);
+    fetch(queryString)
+        .then(result => result.json())
+        .then((data) => console.log(data));
 }
