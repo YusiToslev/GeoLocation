@@ -47,9 +47,10 @@ async function submitData() {
 }
 
 async function visualiseData() {
+    await submitData();
+
     let cityInfo = document.getElementById('city-info');
     cityInfo.classList.remove('invisible');
-    await submitData();
 
     console.log(obj);
 
