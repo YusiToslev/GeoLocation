@@ -8,11 +8,25 @@
 </head>
 <body>
     <div class="container">
-        <h2 id="title">Enter Coordinates</h2>
+        <h2 id="title">Въведи кординати</h2>
         <input type="text" id="coordinates" placeholder="coordinates">
              
-        <button id="submit" onclick="submitData()">Submit</button>
+        <button id="submit" onclick="visualiseData()">Въведи</button>
     </div>
+
+    <div class="container invisible" id="city-info">
+        <span id="city-name"></span>
+
+        <br>
+
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <span id="city-area"></span>
+            ,
+            <span id="city-country"></span>
+            <img id="city-flag" src="https://flagsapi.com/BG/shiny/64.png">
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

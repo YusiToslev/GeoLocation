@@ -27,11 +27,13 @@ function convertToQueryString(base, coords, language) {
     let params = new URLSearchParams({
         latitude: coords.latitude,
         longitude: coords.longitude,
-        language: 'bg'
+        localityLanguage: 'bg'
     });
 
     return base + params.toString();
 }
+
+let obj;
 
 async function submitData() {
     let content = document.getElementById('coordinates').value;
@@ -39,7 +41,20 @@ async function submitData() {
     let coords = coordinatesToLongLat(content);
     let queryString = convertToQueryString(BASE_URL, coords);
 
-    fetch(queryString)
+    await fetch(queryString)
         .then(result => result.json())
-        .then((data) => console.log(data));
+        .then((data) => obj = data);
+}
+
+async function visualiseData() {
+    let cityInfo = document.getElementById('city-info');
+    cityInfo.classList.remove('invisible');
+    await submitData();
+
+    console.log(obj);
+
+    document.getElementById('city-name').innerHTML = obj.city;
+    document.getElementById('city-country').innerHTML = obj.countryName;
+    document.getElementById('city-area').innerHTML = obj.locality;
+    document.getElementById('city-flag').src = `https://flagsapi.com/${obj.countryCode}/shiny/64.png`
 }
